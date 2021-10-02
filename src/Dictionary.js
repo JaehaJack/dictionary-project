@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import Definitions from "./Definitions";
 import axios from "axios";
 import "./App.css";
 
 export default function Dictionary() {
   var [keyWord, setKeyWord] = useState("");
+  var [defined, setDefined] = useState(null);
 
   function handleResponse(response) {
-    console.log(response.data[0]);
+    setDefined(response.data[0]);
   }
 
   function handleSubmit(event) {
@@ -22,22 +24,27 @@ export default function Dictionary() {
   }
 
   return (
-    <div className="search-engine">
-      <form className="d-flex justify-content-center" onSubmit={handleSubmit}>
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Enter a word here..."
-              autoFocus={true}
-              onChange={WordInquired}
-            />
-          </div>
-          <div className="col-3">
-            <input type="submit" value="Search" />
-          </div>
-        </div>
-      </form>
+    <div>
+      <div className="search-engine">
+        <form className="d-flex justify-content-center" onSubmit={handleSubmit}>
+          <input
+            type="search"
+            placeholder="Enter a word here..."
+            className="form-control mx-1"
+            autoFocus={true}
+            onChange={WordInquired}
+          />
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-warning mx-1"
+          />
+        </form>
+      </div>
+      <div className="definitions mt-5 pt-3 d-flex justify-content-space-evenly">
+        <br />
+        <Definitions definitions={defined} />
+      </div>
     </div>
   );
 }

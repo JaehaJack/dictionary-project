@@ -11,3 +11,19 @@
   font-family: "Times New Roman", Times, serif;
   font-size: 60px;
 }
+
+.App footer p {
+  font-size: 12px;
+  font-family: monospace;
+}
+
+@media (max-width: 576px) {
+  .App h1 {
+    font-size: 50px;
+  }
+}
+
+.Definitions h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 45px;
+}
