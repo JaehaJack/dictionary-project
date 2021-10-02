@@ -1,4 +1,13 @@
+.App header {
+  max-width: 100%;
+}
+
 .App .dictionary-logo {
   display: flex;
-  height: 80px;
+  height: 180px;
+}
+
+.App h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
 }

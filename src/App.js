@@ -1,4 +1,5 @@
 import korosan from "./korosan.png";
+import Dictionary from "./Dictionary.js";
 import "./App.css";
 
 function App() {
@@ -16,7 +17,12 @@ function App() {
                 />
               </div>
               <div className="col-8">
-                <h1>Dictionary</h1>
+                <div className="row">
+                  <h1>DICTIONARY</h1>
+                </div>
+                <div className="row">
+                  <Dictionary />
+                </div>
               </div>
             </div>
           </div>
