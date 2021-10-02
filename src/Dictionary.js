@@ -3,9 +3,10 @@ import Definitions from "./Definitions";
 import axios from "axios";
 import "./App.css";
 
-export default function Dictionary() {
-  var [keyWord, setKeyWord] = useState("");
+export default function Dictionary(props) {
+  var [keyWord, setKeyWord] = useState(props.defaultKeyWord);
   var [defined, setDefined] = useState(null);
+  var [loaded, setLoaded] = useState(false);
 
   function handleResponse(response) {
     setDefined(response.data[0]);
@@ -13,7 +14,10 @@ export default function Dictionary() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    Inquire();
+  }
 
+  function Inquire() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyWord}`;
 
     axios.get(apiUrl).then(handleResponse);
@@ -23,28 +27,41 @@ export default function Dictionary() {
     setKeyWord(event.target.value);
   }
 
-  return (
-    <div>
-      <div className="search-engine">
-        <form className="d-flex justify-content-center" onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Enter a word here..."
-            className="form-control mx-1"
-            autoFocus={true}
-            onChange={WordInquired}
-          />
-          <input
-            type="submit"
-            value="Search"
-            className="btn btn-warning mx-1"
-          />
-        </form>
+  function Output() {
+    setLoaded(true);
+    Inquire();
+  }
+
+  if (loaded) {
+    return (
+      <div>
+        <div className="search-engine">
+          <form
+            className="d-flex justify-content-center"
+            onSubmit={handleSubmit}
+          >
+            <input
+              type="search"
+              placeholder="Enter a word here..."
+              className="form-control mx-1"
+              autoFocus={true}
+              onChange={WordInquired}
+            />
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-warning mx-1"
+            />
+          </form>
+        </div>
+        <div className="definitions mt-5 pt-3 d-flex justify-content-space-evenly">
+          <br />
+          <Definitions definitions={defined} />
+        </div>
       </div>
-      <div className="definitions mt-5 pt-3 d-flex justify-content-space-evenly">
-        <br />
-        <Definitions definitions={defined} />
-      </div>
-    </div>
-  );
+    );
+  } else {
+    Output();
+    return "Seeking for words...";
+  }
 }

@@ -9,19 +9,19 @@ function App() {
         <header>
           <div className="logo d-flex justify-content-center">
             <div className="row">
-              <div className="col-4  small-photo d-none d-sm-block">
+              <div className="col-3 d-flex small-photo d-none d-sm-block">
                 <img
                   src={korosan}
                   alt="koro-sensei assassination classroom"
                   className="dictionary-logo img-fluid"
                 />
               </div>
-              <div className="col-8">
+              <div className="col-9">
                 <div className="row">
-                  <h1>DICTIONARY</h1>
+                  <h1>WORD HUNT</h1>
                 </div>
                 <div className="row">
-                  <Dictionary />
+                  <Dictionary defaultKeyWord="origin" />
                 </div>
               </div>
             </div>

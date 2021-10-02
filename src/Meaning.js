@@ -5,7 +5,7 @@ import "./App.css";
 
 export default function Meaning(props) {
   return (
-    <div>
+    <section className="meaning">
       <h3>{props.meaning.partOfSpeech}</h3>
       {props.meaning.definitions.map(function (definition, index) {
         return (
@@ -20,9 +20,10 @@ export default function Meaning(props) {
             <br />
             <Antonym antonym={definition.antonyms} />
             <br />
+            <hr />
           </div>
         );
       })}
-    </div>
+    </section>
   );
 }
