@@ -8,11 +8,13 @@ export default function Photos(props) {
           return (
             <div className="row">
               <div className="col-4" key={index}>
-                <img
-                  src={photos.src.landscape}
-                  alt="photos by pexels"
-                  className="img-fluid mb-2"
-                />
+                <a href={photos.src.original} target="_blank" rel="noreferrer">
+                  <img
+                    src={photos.src.landscape}
+                    alt={photos.src.photographer}
+                    className="d-flex justify-content-space-evenly img-fluid mb-3"
+                  />
+                </a>
               </div>
             </div>
           );
