@@ -1,10 +1,10 @@
 .App {
   background: linear-gradient(
     178.6deg,
-    rgb(20, 36, 50) 11.8%,
-    rgb(124, 143, 161) 83.8%
+    rgb(147, 184, 218) 11.8%,
+    rgb(140, 147, 153) 83.8%
   );
-  color: rgb(192, 192, 103);
+  color: rgb(14, 14, 13);
 }
 
 .App header {

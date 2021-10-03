@@ -18,7 +18,7 @@ function App() {
               </div>
               <div className="col-9">
                 <div className="row">
-                  <h1>WORD HUNT</h1>
+                  <h1>DICTIONARY</h1>
                 </div>
                 <div className="row">
                   <Dictionary defaultKeyWord="origin" />
