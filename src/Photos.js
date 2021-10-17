@@ -1,24 +1,30 @@
 import React from "react";
 
+import "./App.css";
+
 export default function Photos(props) {
-  if (props.photos) {
+  if (props.pics) {
     return (
-      <section className="Pics">
-        {props.photos.map(function (photos, index) {
-          return (
-            <div className="row">
-              <div className="col-4" key={index}>
-                <a href={photos.src.original} target="_blank" rel="noreferrer">
+      <section className="Pic">
+        <div className="row">
+          {props.pics.map(function (photos, index) {
+            return (
+              <div className="col-4 album" key={index}>
+                <a
+                  href={photos.src.original}
+                  target="_blank"
+                  rel="noopenner noreferrer"
+                >
                   <img
                     src={photos.src.landscape}
                     alt={photos.src.photographer}
-                    className="d-flex justify-content-space-evenly img-fluid mb-3"
+                    className="img-fluid mb-3"
                   />
                 </a>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </section>
     );
   } else {

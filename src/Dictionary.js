@@ -68,11 +68,10 @@ export default function Dictionary(props) {
           </form>
         </div>
         <div className="definitions mt-5 pt-3 d-flex justify-content-space-evenly">
-          <br />
           <Definitions definitions={defined} />
         </div>
         <div className="photos">
-          <Photos photos={picture} />
+          <Photos pics={picture} />
         </div>
       </div>
     );

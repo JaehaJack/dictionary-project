@@ -1,30 +1,20 @@
-import korosan from "./korosan.png";
 import Dictionary from "./Dictionary.js";
 import "./App.css";
 
 function App() {
   return (
     <div className="App d-flex justify-content-center">
-      <div className="container my-3 p-2">
+      <div className="container my-3 py-2">
         <header>
-          <div className="logo d-flex justify-content-center">
-            <div className="row">
-              <div className="col-3 d-flex small-photo d-none d-sm-block">
-                <img
-                  src={korosan}
-                  alt="koro-sensei assassination classroom"
-                  className="dictionary-logo img-fluid"
-                />
-              </div>
-              <div className="col-9">
-                <div className="row">
-                  <h1>DICTIONARY</h1>
-                </div>
-                <div className="row">
-                  <Dictionary defaultKeyWord="origin" />
-                </div>
-              </div>
-            </div>
+          <div className="row title">
+            <h1>Cultivating Hobbyist: Don't disturb a literati.</h1>
+            <h1>WRITER'S BLOCK</h1>
+            <h2>...let your words come to life and find 'that' word!</h2>
+          </div>
+          <hr />
+          <br />
+          <div className="row elaboration">
+            <Dictionary defaultKeyWord="intellectual" />
           </div>
         </header>
         <footer className="my-2 p-2">

@@ -1,19 +1,24 @@
+h1,
+h2,
+h3 {
+  font-family: "Times New Roman", Times, serif;
+}
+
 .App {
-  background: linear-gradient(
-    178.6deg,
-    rgb(147, 184, 218) 11.8%,
-    rgb(140, 147, 153) 83.8%
-  );
-  color: rgb(14, 14, 13);
+  color: rgb(70, 57, 27);
+  background-color: #719192;
+}
+
+.App .container {
+  border-radius: 0.25%;
+  padding: 20px;
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-attachment: fixed;
+  box-shadow: 1px 1px #000;
 }
 
 .App header {
   max-width: 100%;
-}
-
-.App .dictionary-logo {
-  display: flex;
-  height: 160px;
 }
 
 .App h1 {
@@ -27,7 +32,7 @@
 }
 
 @media (max-width: 576px) {
-  .App h1 {
+  .App .header h1 {
     font-size: 50px;
   }
 }
@@ -38,9 +43,10 @@
 }
 
 .Definitions .Meanings section {
-  border: 0.5px solid rgb(246, 236, 99);
+  border: 0.5px solid #719192;
   border-radius: 8px;
-  box-shadow: 3px 4px 10px rgba(47, 47, 1, 0.883);
+  box-shadow: 3px 4px 10px #719192;
   margin-bottom: 15px;
   padding: 10px;
+  align-items: stretch;
 }
